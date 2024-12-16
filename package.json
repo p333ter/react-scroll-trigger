@@ -1,0 +1,77 @@
+{
+  "name": "@ppasmik/react-scroll-trigger",
+  "version": "1.0.0",
+  "description": "Modern React component for scroll-based triggers and animations with TypeScript support",
+  "author": "ppasmik",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppasmik/react-scroll-trigger.git"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "rollup --config rollup.config.cjs",
+    "test": "jest",
+    "prepare": "npm run build",
+    "dev": "cd example && npm start",
+    "clean": "rimraf dist",
+    "lint": "eslint src --ext .ts,.tsx",
+    "prebuild": "npm run clean"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "lodash": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.0.0",
+    "@types/lodash.throttle": "^4.1.9",
+    "@types/react": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.0.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  },
+  "keywords": [
+    "react",
+    "scroll",
+    "trigger",
+    "intersection",
+    "viewport",
+    "animation",
+    "typescript",
+    "hooks"
+  ],
+  "bugs": {
+    "url": "https://github.com/ppasmik/react-scroll-trigger/issues"
+  },
+  "homepage": "https://github.com/ppasmik/react-scroll-trigger#readme",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  }
+}
