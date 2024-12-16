@@ -1,14 +1,11 @@
-﻿import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import { readFileSync } from 'fs';
-import dts from 'rollup-plugin-dts';
+﻿const typescript = require('@rollup/plugin-typescript');
+const commonjs = require('@rollup/plugin-commonjs');
+const resolve = require('@rollup/plugin-node-resolve');
+const { dts } = require('rollup-plugin-dts');
 
-const packageJson = JSON.parse(
-  readFileSync(new URL('./package.json', import.meta.url), 'utf8')
-);
+const packageJson = require('./package.json');
 
-const config = [
+module.exports = [
   {
     input: 'src/index.ts',
     output: [
@@ -26,15 +23,17 @@ const config = [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: true,
+        declarationDir: './dist/types',
+      }),
     ],
     external: ['react', 'lodash/throttle', 'lodash.throttle'],
   },
   {
-    input: 'dist/types/index.d.ts',
-    output: [{ file: packageJson.types, format: 'esm' }],
+    input: 'src/index.ts', // zmenené z dist/types/index.d.ts
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
   },
 ];
-
-e;

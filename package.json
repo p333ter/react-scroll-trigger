@@ -1,12 +1,12 @@
 {
   "name": "@ppasmik/react-scroll-trigger",
   "version": "1.0.0",
-  "description": "Modern React component for scroll-based triggers and animations with TypeScript support",
-  "author": "ppasmik",
+  "description": "Modern React component for scroll-based triggers and animations with TypeScript support. A rewritten and modernized version of the original react-scroll-trigger package.",
+  "author": "Peter Pasmik",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ppasmik/react-scroll-trigger.git"
+    "url": "git+https://github.com/p333ter/react-scroll-trigger.git"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -14,10 +14,9 @@
   "files": [
     "dist"
   ],
-  "type": "module",
   "scripts": {
-    "build": "rollup --config rollup.config.cjs",
-    "test": "jest",
+    "build": "rollup -c",
+    "test": "jest --config jest.config.js",
     "prepare": "npm run build",
     "dev": "cd example && npm start",
     "clean": "rimraf dist",
@@ -48,7 +47,10 @@
     "rollup": "^4.0.0",
     "rollup-plugin-dts": "^6.0.0",
     "ts-jest": "^29.0.0",
-    "typescript": "^5.0.0"
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "lodash.throttle": "^4.1.1"
@@ -61,17 +63,11 @@
     "viewport",
     "animation",
     "typescript",
-    "hooks"
+    "hooks",
+    "react-scroll-trigger"
   ],
   "bugs": {
-    "url": "https://github.com/ppasmik/react-scroll-trigger/issues"
+    "url": "https://github.com/p333ter/react-scroll-trigger/issues"
   },
-  "homepage": "https://github.com/ppasmik/react-scroll-trigger#readme",
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "jsdom",
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ]
-  }
+  "homepage": "https://github.com/p333ter/react-scroll-trigger#readme"
 }
