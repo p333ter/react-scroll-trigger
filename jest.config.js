@@ -9,5 +9,14 @@
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  watchPathIgnorePatterns: ['/example/'],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!src/**/*.test.{ts,tsx}',
+    '!src/setupTests.ts',
+  ],
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
+  testEnvironmentOptions: {
+    url: 'http://localhost',
+  },
 };

@@ -1,8 +1,10 @@
 # @ppasmik/react-scroll-trigger
 
-[![npm](https://img.shields.io/npm/v/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
-[![NPM](https://img.shields.io/npm/l/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
-[![npm](https://img.shields.io/npm/dt/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
+[![npm version](https://img.shields.io/npm/v/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
+[![NPM license](https://img.shields.io/npm/l/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
+[![npm downloads](https://img.shields.io/npm/dm/@ppasmik/react-scroll-trigger?style=flat-square)](https://www.npmjs.com/package/@ppasmik/react-scroll-trigger)
+[![Coverage Status](https://img.shields.io/coveralls/github/p333ter/react-scroll-trigger?style=flat-square)](https://coveralls.io/github/p333ter/react-scroll-trigger)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/p333ter/react-scroll-trigger/publish.yml?style=flat-square)](https://github.com/p333ter/react-scroll-trigger/actions)
 
 A modern, TypeScript-based React component for monitoring scroll events and triggering callbacks when elements enter, exit, or progress through the viewport. This is a rewritten and modernized version of the original react-scroll-trigger package.
 
@@ -87,15 +89,17 @@ Standard React props (className, style, etc.) are also supported and will be pas
 ## Technical Details
 
 The component uses React hooks for efficient state management:
+
 - `useRef` to track the DOM element position
 - `useState` for viewport visibility and scroll tracking
 - `useEffect` for handling scroll and resize events with proper cleanup
 
 Visibility detection:
+
 - Uses `getBoundingClientRect()` for accurate element position calculation
 - Progress is calculated based on element's position relative to viewport:
   ```ts
-  progress = 1 - elementRect.bottom / (viewportEnd + elementRect.height)
+  progress = 1 - elementRect.bottom / (viewportEnd + elementRect.height);
   ```
 - Velocity is derived from scroll position changes over time
 - All calculations are throttled (default 100ms) to optimize performance
