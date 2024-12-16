@@ -1,6 +1,6 @@
 {
   "name": "@ppasmik/react-scroll-trigger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern React component for scroll-based triggers and animations with TypeScript support. A rewritten and modernized version of the original react-scroll-trigger package.",
   "author": "Peter Pasmik",
   "license": "MIT",
