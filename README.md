@@ -108,7 +108,7 @@ The component is designed to work with both window-level scrolling and custom sc
 
 ## License
 
-MIT © [Peter Pasmik]
+[MIT](https://choosealicense.com/licenses/mit/) © [Peter Pasmik]
 
 ## Acknowledgments
 
